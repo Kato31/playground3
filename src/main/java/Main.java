@@ -1,6 +1,10 @@
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Main {
+
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
         Event event = new Event();
         event.setKey(100L);
@@ -10,10 +14,9 @@ public class Main {
         String payload = "payload";
         event.setPayload(payload);
 
-        LoggerFactory.getLogger(Event.class).error(event.toString());
-        LoggerFactory.getLogger(Event.class).debug(event.toString());
-        LoggerFactory.getLogger(Event.class).info(event.toString());
-        LoggerFactory.getLogger(Event.class).trace(event.toString());
+        logger.error(event.toString());
+        logger.debug(event.toString());
 
     }
+
 }
